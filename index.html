@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Promise Day Priyo ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            overflow: hidden;
+        }
+
+        .container {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        h1 { font-size: 40px; }
+
+        p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .yes-btn {
+            background-color: white;
+            color: #ff4b7d;
+        }
+
+        .no-btn {
+            background-color: #ff4b7d;
+            color: white;
+            position: absolute;
+        }
+
+        .letter {
+            display: none;
+            background: white;
+            color: #ff4b7d;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: 20px auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .music-btn {
+            background: white;
+            color: #ff4b7d;
+            margin-top: 20px;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Sukoon Song -->
+<audio id="bgMusic" loop>
+    <source src="sukoon.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <h1>Happy Promise Day Priyo 💖</h1>
+
+    <p>
+        Priyo, on this special Promise Day,  
+        I promise to stand by you, support you,  
+        and choose you every single day.  
+        You are my today and all my tomorrows. ❤️  
+        – Nemha
+    </p>
+
+    <button class="music-btn" onclick="playMusic()">🎵 Play Sukoon</button>
+
+    <h2>Will You Stay Forever With Me? 💞</h2>
+
+    <button class="yes-btn" onclick="openLetter()">Yes Forever 💍</button>
+    <button class="no-btn" id="noBtn">No 😢</button>
+
+    <div class="letter" id="letter">
+        <h3>💌 A Letter For You</h3>
+        <p>
+            My Dearest Priyo,  
+            You are my sukoon, my peace in chaos,  
+            my calm in every storm.  
+            I promise to love you with loyalty and honesty.  
+            I promise to grow with you and stand beside you always.  
+            Forever with you feels just right. ❤️  
+            
+            Yours always,  
+            Nemha 💕
+        </p>
+    </div>
+</div>
+
+<script>
+    // Play music manually (browser safe)
+    function playMusic() {
+        document.getElementById("bgMusic").play();
+    }
+
+    // Floating hearts
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => { heart.remove(); }, 6000);
+    }, 500);
+
+    // No button runs away
+    const noBtn = document.getElementById("noBtn");
+    noBtn.addEventListener("mouseover", () => {
+        noBtn.style.top = Math.random() * window.innerHeight + "px";
+        noBtn.style.left = Math.random() * window.innerWidth + "px";
+    });
+
+    function openLetter() {
+        document.getElementById("letter").style.display = "block";
+        alert("You just made Nemha the happiest ❤️");
+    }
+</script>
+
+</body>
+</html>
