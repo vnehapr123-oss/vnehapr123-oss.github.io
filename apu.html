@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For Reel Maa 💗</title>
+<title>For Reel Maa 💅</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -24,6 +24,7 @@ button {
     color: white;
     cursor: pointer;
     margin: 10px;
+    font-size: 16px;
 }
 
 .heart {
@@ -51,48 +52,40 @@ button {
 
 <body>
 
+<!-- 🎵 MUSIC -->
 <audio id="music" loop>
-<source src="halka.mp3" type="audio/mpeg">
+    <source src="./tera.mp3" type="audio/mpeg">
 </audio>
 
 <div class="container">
+
 <h1>Happy Galentine’s Day Reel Maa 💅</h1>
 
 <p>
-To the most aesthetic, dramatic,  
-romantic-at-heart queen 👑  
-Life with you feels like a cute reel  
-on loop forever 💗  
+To my forever partner,  
+my chaos twin, my cinematic queen 👑  
+If life were a movie,  
+you’d be my main character 💗  
 — Nemha
 </p>
 
-<button onclick="playMusic()">🎵 Play Your Song</button>
+<button onclick="playMusic()">🎵 Play Our Song</button>
 <button onclick="openLetter()">Open Letter 💌</button>
 
 <div class="letter" id="letter">
 <h3>For My Reel Maa 🎀</h3>
 <p>
-You bring sparkle, chaos, romance,  
-and cinematic energy into my life.  
-You don’t just live moments —  
-you make them aesthetic ✨  
-Forever my reel partner 💕
+“Tera Yaar Hoon Main” isn’t just a song —  
+it’s literally us 🥹💗  
+Through reels, drama, chaos, and late-night talks,  
+I’ll always be your person.  
+Forever your yaar 💕
 </p>
 </div>
+
 </div>
 
 <script>
-function playMusic() {
-document.getElementById("music").play();
-alert("Cue the aesthetic vibes 💗");
-}
-
-function openLetter() {
-document.getElementById("letter").style.display = "block";
-alert("A message from your Nemha 💕");
-}
-
-// floating hearts
 setInterval(() => {
 const heart = document.createElement("div");
 heart.classList.add("heart");
@@ -101,6 +94,16 @@ heart.style.left = Math.random()*100 + "vw";
 document.body.appendChild(heart);
 setTimeout(()=>heart.remove(),7000);
 }, 500);
+
+function playMusic() {
+    document.getElementById("music").play();
+    alert("Tera Yaar Hoon Main 💗👯‍♀️");
+}
+
+function openLetter() {
+    document.getElementById("letter").style.display = "block";
+    alert("Forever your yaar 💕");
+}
 </script>
 
 </body>
