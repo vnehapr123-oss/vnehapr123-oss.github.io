@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Reel Maa 💗</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #ffd1ff, #c1f0f6);
+    color: #ff4b7d;
+    overflow: hidden;
+}
+
+.container { margin-top: 80px; padding: 20px; }
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4b7d;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.heart {
+    position: absolute;
+    animation: float 7s linear infinite;
+    font-size: 22px;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-10vh); }
+}
+
+.letter {
+    display: none;
+    background: white;
+    color: #ff4b7d;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 520px;
+    margin: 20px auto;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+<source src="halka.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+<h1>Happy Galentine’s Day Reel Maa 💅</h1>
+
+<p>
+To the most aesthetic, dramatic,  
+romantic-at-heart queen 👑  
+Life with you feels like a cute reel  
+on loop forever 💗  
+— Nemha
+</p>
+
+<button onclick="playMusic()">🎵 Play Your Song</button>
+<button onclick="openLetter()">Open Letter 💌</button>
+
+<div class="letter" id="letter">
+<h3>For My Reel Maa 🎀</h3>
+<p>
+You bring sparkle, chaos, romance,  
+and cinematic energy into my life.  
+You don’t just live moments —  
+you make them aesthetic ✨  
+Forever my reel partner 💕
+</p>
+</div>
+</div>
+
+<script>
+function playMusic() {
+document.getElementById("music").play();
+alert("Cue the aesthetic vibes 💗");
+}
+
+function openLetter() {
+document.getElementById("letter").style.display = "block";
+alert("A message from your Nemha 💕");
+}
+
+// floating hearts
+setInterval(() => {
+const heart = document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML = "💗";
+heart.style.left = Math.random()*100 + "vw";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),7000);
+}, 500);
+</script>
+
+</body>
+</html>
