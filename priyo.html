@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For My Petla 🌌</title>
+<title>For My Petla ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -9,12 +9,12 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     text-align: center;
-    background: radial-gradient(circle at bottom, #0b132b, #000);
+    background: radial-gradient(circle at bottom, #02010a, #000);
     color: #e0e1dd;
     overflow: hidden;
 }
 
-/* 🌌 STAR FIELD */
+/* ✨ TWINKLING STARS */
 .star {
     position: absolute;
     width: 2px;
@@ -28,7 +28,18 @@ body {
     to { opacity: 1; }
 }
 
-/* 🚀 INTRO */
+/* 💖 HEART CONSTELLATION */
+.heart-star {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #ffd6ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ffb3ff;
+    cursor: pointer;
+}
+
+/* 🎬 INTRO */
 #intro {
     position: fixed;
     width: 100%;
@@ -38,22 +49,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 10;
-}
-
-#intro h1 {
-    font-size: 36px;
-    letter-spacing: 3px;
-}
-
-#enterBtn {
-    margin-top: 25px;
-    padding: 12px 28px;
-    border-radius: 30px;
-    border: none;
-    background: #778da9;
-    color: white;
-    cursor: pointer;
 }
 
 /* ❤️ MAIN */
@@ -66,13 +61,12 @@ img {
     width: 230px;
     border-radius: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 0 30px rgba(255,255,255,0.2);
 }
 
 button {
     padding: 12px 26px;
-    border: none;
     border-radius: 30px;
+    border: none;
     background: #415a77;
     color: white;
     cursor: pointer;
@@ -92,16 +86,15 @@ button {
 
 <body>
 
-<!-- 🎵 SONG -->
 <audio id="music" loop>
     <source src="./sar.mp3" type="audio/mpeg">
 </audio>
 
-<!-- 🌌 INTRO -->
+<!-- 🎬 INTRO -->
 <div id="intro">
-    <h1>4 Years Across the Universe 🌌</h1>
+    <h1>4 Years of Us ❤️</h1>
     <p>Moto ❤️ Petla</p>
-    <button id="enterBtn" onclick="enterSite()">Enter Our Galaxy 🚀</button>
+    <button onclick="enterSite()">Enter</button>
 </div>
 
 <!-- ❤️ MAIN -->
@@ -109,34 +102,34 @@ button {
 
 <img src="./us.jpg" alt="Us ❤️">
 
-<h1>Happy Valentine’s Day Petla 🌠</h1>
+<h1>Happy Valentine’s Day Petla ❤️</h1>
 
 <p>
-If love were space,  
-you’d be my gravity 🪐  
-4 years later and I still choose you  
-in every universe ❤️  
-— Your Moto 💕
+You act like a sigma male,  
+but I know the soft pookie behind it 😏💗  
+You may not say much,  
+but your actions always show your love ❤️  
+Thank you for being my safe place 🥹  
+— Forever yours, Moto 💕
 </p>
 
-<button onclick="startSecret()">Unlock Cosmic Secret ✨</button>
+<button onclick="startMission()">Unlock Moto’s Secret 😏</button>
 
 <div class="secret" id="secretMsg">
-<h3>💌 COSMIC MESSAGE</h3>
+<h3>💌 SECRET</h3>
 <p>
-You’re my favorite place in the universe 🌌  
-No distance, no time, no galaxy  
-could ever change that ❤️  
-Forever orbiting you,  
-Moto 💕
+I don’t need loud words.  
+The quiet way you love me  
+is everything ❤️  
+I’m so lucky you’re mine, Petla 💗
 </p>
 </div>
 
 </div>
 
 <script>
-// 🌌 CREATE STARS
-for (let i = 0; i < 120; i++) {
+// ✨ RANDOM STARS
+for (let i = 0; i < 150; i++) {
     let star = document.createElement("div");
     star.className = "star";
     star.style.left = Math.random()*100 + "vw";
@@ -144,21 +137,41 @@ for (let i = 0; i < 120; i++) {
     document.body.appendChild(star);
 }
 
-// 🚀 ENTER SITE
+// 💖 HEART CONSTELLATION
+const heartPoints = [
+    [50, 30],[47,32],[45,35],[45,38],[47,41],
+    [50,44],[53,41],[55,38],[55,35],[53,32]
+];
+
+heartPoints.forEach(p => {
+    let star = document.createElement("div");
+    star.className = "heart-star";
+    star.style.left = p[0] + "vw";
+    star.style.top = p[1] + "vh";
+    star.onclick = revealSecret;
+    document.body.appendChild(star);
+});
+
+// 🎬 ENTER
 function enterSite() {
     document.getElementById("intro").style.display = "none";
     document.getElementById("main").style.display = "block";
     document.getElementById("music").play();
 }
 
-// ✨ SECRET
-function startSecret() {
-    alert("Tap anywhere in the universe 💫");
+// 😏 INTERACTIVE MISSION
+function startMission() {
+    alert("Step 1: Tap anywhere 💕");
     document.body.onclick = function() {
-        document.getElementById("secretMsg").style.display = "block";
-        alert("Moto’s cosmic heart unlocked 💖");
+        alert("Step 2: Find and click the glowing heart 💖");
         document.body.onclick = null;
     };
+}
+
+// 💌 REVEAL SECRET
+function revealSecret() {
+    document.getElementById("secretMsg").style.display = "block";
+    alert("Moto’s heart unlocked ❤️");
 }
 </script>
 
